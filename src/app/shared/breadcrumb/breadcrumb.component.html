@@ -1,0 +1,11 @@
+<ol class="breadcrumbs">
+  <li><a [routerLink]="['/']"><i class="fa fa-home"></i></a></li>
+  <ng-template ngFor let-breadcrumb [ngForOf]="breadcrumbs" let-last=last>
+    <li
+      *ngIf="breadcrumb.label.title && breadcrumb.url.substring(breadcrumb.url.length-1) == '/'|| breadcrumb.label.title && last"
+      [ngClass]="{active: last}">
+      <a *ngIf="!last" [routerLink]="breadcrumb.url">{{breadcrumb.label.title}}</a>
+      <span *ngIf="last" [routerLink]="breadcrumb.url">{{breadcrumb.label.title}}</span>
+    </li>
+  </ng-template>
+</ol>

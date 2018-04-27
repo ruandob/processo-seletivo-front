@@ -1,0 +1,17 @@
+<div class="form-group"
+     [class.has-success]="hasSuccess()"
+     [class.has-error]="hasError()">
+  <label class="control-label">{{label}} <span *ngIf="isFieldRequired()">*</span></label>
+
+  <ng-content></ng-content>
+
+  <span class="help-block">
+    <span *ngIf="hasError()">
+      <span *ngIf="input.hasError('required')">Campo obrigatório</span>
+      <span
+        *ngIf="input.hasError('minlength')">Informe pelo menos {{input.errors.minlength.requiredLength}} caracteres</span>
+      <span *ngIf="input.hasError('pattern')">{{errorPattern}}</span>
+      <span *ngIf="input.hasError('emailsNotMatch')">E-mails zuado</span>
+    </span>
+  </span>
+</div>

@@ -1,0 +1,45 @@
+<form [formGroup]="mantenedoraForm" novalidate>
+  <div class="panel">
+
+    <div class="panel-body">
+      <div class="row">
+        
+        
+        <div class="col-xs-4">
+          <input-container label="Nome">
+          <input type="text" class="form-control" placeholder="nome" formControlName="nome" autocomplete="off">
+        </input-container>
+      </div>
+      
+      <div class="col-xs-4">
+        <input-container label="Código">
+          <input type="text" class="form-control" placeholder="codigo" formControlName="codigo" autocomplete="off">
+        </input-container>
+      </div>
+
+      <div class="col-xs-4">
+          <input-container label="NumeroFiscal">
+            <input type="text" class="form-control" placeholder="numero fiscal" formControlName="numeroFiscal" autocomplete="off">
+          </input-container>
+        </div>
+        <div class="col-xs-4">
+          <input-container label="Endereço">
+            <input type="text" class="form-control" placeholder="Logradouro" formControlName="endereco" autocomplete="off">
+          </input-container>
+        </div>
+      </div>
+    </div>
+    <div class="panel-footer">
+      <button (click)="salvar(mantenedoraForm.value)" [disabled]="!mantenedoraForm.valid" class="btn btn-success">
+        Salvar
+      </button>
+      <button [routerLink]="['/mantenedora/']" class="btn btn-default">
+        Voltar
+      </button>
+    </div>
+  </div>
+</form>
+
+
+<pre>{{ mantenedoraForm.value | json }}</pre>
+<!-- <p>Paises value: {{ paises | json }}</p> -->

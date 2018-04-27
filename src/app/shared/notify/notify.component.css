@@ -1,0 +1,122 @@
+.notify {
+  top: 36px;
+  right: 36px;
+  height: auto;
+  z-index: 2;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 12px;
+  cursor: pointer;
+  animation: 1s notify-animate forwards;
+}
+
+.notify-container:first-child {
+  margin-top: 0;
+}
+
+.notify-container {
+  width: 100%;
+  height: 100%;
+  min-height: 16px;
+  margin-top: 0px;
+}
+
+.notify-container:after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.notify-icon {
+  padding-right: 10px;
+  vertical-align: top;
+}
+
+.notify-details {
+  height: 100%;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.notify-icon,
+.notify-details {
+  display: table-cell;
+}
+
+.notify-icon > div.icon {
+  width: 50px;
+  height: 50px;
+  padding: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  font-family: FontAwesome;
+  line-height: 30px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.notify-dismissible > button {
+  visibility: hidden;
+
+}
+
+.notify-dismissible:hover > button  {
+  visibility: visible;
+}
+
+/* Notify color */
+.notify-success {
+  background: rgba(71, 164, 71, 0.95);
+  border-color: rgba(71, 164, 71, 0.95);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.notify-danger {
+  background: rgba(210, 50, 45, 0.95);
+  border-color: rgba(210, 50, 45, 0.95);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.notify-info {
+  background: rgba(91, 192, 222, 0.95);
+  border-color: rgba(91, 192, 222, 0.95);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.notify-warning {
+  background: rgba(237, 156, 40, 0.95);
+  border-color: rgba(237, 156, 40, 0.95);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Notify icon */
+.notify-danger .notify-icon > div.icon:after{
+  content: "\f00d";
+}
+
+.notify-success .notify-icon > div.icon:after{
+  content: "\f00c";
+}
+
+.notify-info .notify-icon > div.icon:after{
+  content: "\f129";
+}
+
+.notify-warning .notify-icon > div.icon:after{
+  content: "\f071";
+}
+
+/* Animation */
+@keyframes notify-animate {
+  from {
+    opacity:0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity:1;
+    transform: translateY(0);
+  }
+}
+

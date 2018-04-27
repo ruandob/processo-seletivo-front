@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background: #ECEDF0;
+}
+
+@media only screen and (max-width: 767px) {
+  .page-header {
+    margin: 0 -15px 20px;
+  }
+}
+
+html.no-overflowscrolling .nano > .nano-content {
+  overflow-y: hidden;
+}
+
+/* dataTable */
+table.dataTable thead th {
+  position: relative;
+  background-image: none !important;
+}
+
+table.dataTable thead th.sorting:after,
+table.dataTable thead th.sorting_asc:after,
+table.dataTable thead th.sorting_desc:after {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: block;
+  font-family: FontAwesome;
+  font-size: 16px;
+}
+
+table.dataTable thead th.sorting:after {
+  content: "\f0dc";
+  color: #ddd;
+  opacity: 1;
+}
+
+table.dataTable thead th.sorting_asc:after {
+  content: "\f160";
+  color: #0088CC;
+  opacity: 1;
+}
+
+table.dataTable thead th.sorting_desc:after {
+  content: "\f161";
+  color: #0088CC;
+  opacity: 1;
+}
+
+div.dataTables_wrapper div.dataTables_filter input {
+  width: 98%;
+}
+
+/* fim dataTable */
+
+.notification {
+  position: fixed;
+  z-index: 8888;
+  width: 300px;
+  opacity: 1;
+  right: 15px;
+  top: 15px;
+  cursor: auto;
+}
+
+label {
+  font-weight: normal;
+  color: #777 !important;
+}
+
+label.required::after, span.required::after {
+  content: "*";
+  color: #B92C28;
+  font-size: 20px;
+  position: relative;
+  margin-left: 3px;
+  margin-top: 0px;
+}
+
+.content-body .row + .row {
+  padding-top: 10px;
+}
+
+.help-block{
+  font-size: 12px;
+  height: 12px;
+}
